@@ -19,11 +19,11 @@ import java.util.UUID;
 @Accessors(chain = true)
 public class Role {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "role_id")
-    private UUID roleId;
+    private Long roleId;
 
-    @Column(name = "role_title", nullable = false)
+    @Column(name = "role_title", nullable = false, unique = true)
     @Enumerated(EnumType.STRING)
     private RoleEnum roleTitle;
 

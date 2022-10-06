@@ -26,19 +26,16 @@ public class SecurityAgainApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        Users user = Users.
-                builder()
-                .userId(UUID.randomUUID())
-                .email("dinhluyen45@gmail")
-                .password(passwordEncoder.encode("123456"))
-                .userName("dinhluyen")
-                .build();
-        Role role = Role.builder()
-                .roleId(UUID.randomUUID())
-                .roleTitle(RoleEnum.admin)
-                .build();
+/*        Users user = new Users()
+                .setEmail("dinhluyen45@gmail")
+                .setPassword(passwordEncoder.encode("123456"))
+                .setUserName("dinhluyen");
+//        Role role = Role.builder()
+//                .roleTitle(RoleEnum.admin)
+//                .build();
+        Role role = roleRepository.findRolesByRoleTitle(RoleEnum.admin);
         user.setRoleSet(Collections.singleton(role));
-        roleRepository.save(role);
-        usersRepository.save(user);
+//        roleRepository.save(role);
+        usersRepository.save(user);*/
     }
 }
